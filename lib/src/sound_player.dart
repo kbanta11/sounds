@@ -30,7 +30,7 @@ import 'media_format/native_media_formats.dart';
 import 'plugins/base_plugin.dart';
 import 'plugins/player_base_plugin.dart';
 import 'plugins/sound_player_plugin.dart';
-import 'plugins/sound_player_shade_plugin.dart';
+//import 'plugins/sound_player_shade_plugin.dart';
 
 /// An api for playing audio.
 ///
@@ -51,7 +51,7 @@ class SoundPlayer implements SlotEntry {
 
   PlayerEvent _onSkipForward;
   PlayerEvent _onSkipBackward;
-  OSPlayerStateEvent _onUpdatePlaybackState;
+  //OSPlayerStateEvent _onUpdatePlaybackState;
   PlayerEventWithCause _onPaused;
   PlayerEventWithCause _onResumed;
   PlayerEventWithCause _onStarted;
@@ -158,6 +158,7 @@ class SoundPlayer implements SlotEntry {
   /// ```
   /// The above example guarentees that the player will be released.
   /// {@end-tool}
+  /*
   SoundPlayer.withShadeUI({
     this.canPause = true,
     this.canSkipBackward = false,
@@ -168,6 +169,7 @@ class SoundPlayer implements SlotEntry {
         _plugin = SoundPlayerShadePlugin() {
     _commonInit();
   }
+  */
 
   /// Create a [SoundPlayer] that does not have a UI.
   ///
@@ -565,7 +567,7 @@ class SoundPlayer implements SlotEntry {
   void _onSystemSkipBackward() {
     if (_onSkipBackward != null) _onSkipBackward();
   }
-
+/*
   void _onSystemUpdatePlaybackState(SystemPlaybackState systemPlaybackState) {
     /// I have concerns about how these state changes interact with
     /// the SoundPlayer's own state management.
@@ -597,6 +599,7 @@ class SoundPlayer implements SlotEntry {
       _onUpdatePlaybackState(systemPlaybackState);
     }
   }
+ */
 
   /// Pass a callback if you want to be notified
   /// when the user attempts to skip forward to the
@@ -629,9 +632,11 @@ class SoundPlayer implements SlotEntry {
   /// Pass a callback if you want to be notified
   /// when the OS Media Player changes state.
   // ignore: avoid_setters_without_getters
+  /*
   set onUpdatePlaybackState(OSPlayerStateEvent onUpdatePlaybackState) {
     _onUpdatePlaybackState = onUpdatePlaybackState;
   }
+   */
 
   ///
   /// Pass a callback if you want to be notified when
@@ -829,7 +834,7 @@ enum PlayerState {
 }
 
 typedef PlayerEvent = void Function();
-typedef OSPlayerStateEvent = void Function(SystemPlaybackState);
+//typedef OSPlayerStateEvent = void Function(SystemPlaybackState);
 
 /// TODO should we be passing an object that contains
 /// information such as the position in the track when
@@ -889,9 +894,11 @@ void onSystemSkipForward(SoundPlayer player) => player._onSystemSkipForward();
 void onSystemSkipBackward(SoundPlayer player) => player._onSystemSkipBackward();
 
 /// Handles playback state changes coming up from the OS Media Player
+/*
 void onSystemUpdatePlaybackState(
         SoundPlayer player, SystemPlaybackState playbackState) =>
     player._onSystemUpdatePlaybackState(playbackState);
+*/
 
 /// Called when a system error occured when trying to play audio.
 void onSystemError(SoundPlayer player, String description) =>

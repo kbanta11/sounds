@@ -13,7 +13,7 @@
  *   You should have received a copy of the Lesser GNU General Public License
  *   along with Sounds.  If not, see <https://www.gnu.org/licenses/>.
  */
-
+/*
 import 'dart:async';
 
 import 'package:flutter/services.dart';
@@ -118,3 +118,4 @@ enum SystemPlaybackState {
   /// The OS Media Player has been stopped
   stopped
 }
+*/

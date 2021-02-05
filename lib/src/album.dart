@@ -55,7 +55,7 @@ class Album {
 
   Album._internal(SoundPlayer player, bool virtualAlbum)
       : _virtualAlbum = virtualAlbum {
-    _player = player ?? SoundPlayer.withShadeUI();
+    _player = player ?? SoundPlayer.noUI();
 
     _player.onSkipBackward = _skipBackward;
     _player.onSkipForward = _skipForward;
