@@ -50,7 +50,7 @@ static SoundRecorderManager* soundRecorderManager; // Singleton
 {
         _channel = [FlutterMethodChannel methodChannelWithName:@"com.bsutton.sounds.sound_recorder"
                                         binaryMessenger:[registrar messenger]];
-        assert (soundRecorderManager == nil);
+        //assert (soundRecorderManager == nil);
         soundRecorderManager = [[SoundRecorderManager alloc] init];
         [registrar addMethodCallDelegate:soundRecorderManager channel:_channel];
 }

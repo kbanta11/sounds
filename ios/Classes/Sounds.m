@@ -23,9 +23,7 @@
 
 
 #import "Sounds.h"
-#import "SoundPlayer.h"
 #import "SoundRecorder.h"
-#import "ShadePlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Foundation/Foundation.h>
 
@@ -37,9 +35,7 @@
 
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar
 {
-        SoundPlayerReg(registrar);
         SoundRecorderReg(registrar);
-        ShadePlayerReg(registrar);
 }
 
 @end
