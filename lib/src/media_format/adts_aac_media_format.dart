@@ -12,7 +12,7 @@ class AdtsAacMediaFormat extends NativeMediaFormat {
     int numChannels = 1,
     int bitRate = 16000,
   }) : super.detail(
-          name: 'adts/aac',
+          name: 'aac',
           sampleRate: 16000,
           numChannels: 1,
           bitRate: 16000,
@@ -23,7 +23,7 @@ class AdtsAacMediaFormat extends NativeMediaFormat {
 
   // Whilst the actual index is MediaRecorder.AudioEncoder.AAC (3)
   @override
-  int get androidEncoder => 3;
+  int get androidEncoder => 4;
 
   /// MediaRecorder.OutputFormat.AAC_ADTS
   @override
